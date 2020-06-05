@@ -1,0 +1,17 @@
+﻿@model IEnumerable<FoodOrderSolution.Data.ViewModels.ListCart>
+
+<ul class="right-menu">
+    @if (Model != null && Model.Count() > 0)
+    {
+        foreach (var item in Model.Where(x => x.Carts != null))
+        {
+            foreach (var p in item.Carts)
+            {
+                <li class="right-menu-item"><a href="#"><i class="fas fa-plus"></i> @p.Name (@p.Qty) </a></li>
+            }
+        }
+    }
+</ul>
+<div class="container" style="text-align:center">
+    <a class="btn btn-danger" href="/gio-hang.html">Xem giỏ hàng</a>
+</div>

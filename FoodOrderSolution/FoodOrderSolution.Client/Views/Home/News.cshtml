@@ -1,0 +1,41 @@
+﻿@model IEnumerable<FoodOrderSolution.Data.ViewModels.NewsView>
+@using FoodOrderSolution.Helper.Core
+<div class="section-home home-news">
+    <div class="heading-section">
+        <div class="sa-title popcat">Tin Tức &amp; Mẹo</div>
+        <div class="clear"></div>
+    </div>
+    <div class="home-news-wrap">
+        @if (Model != null && Model.Count() > 0)
+        {
+            foreach (var item in Model)
+            {
+                var url = $"/tin-tuc/{item.Title.ToUrlFormat(true, true)}-{item.ID}.html";
+                <div class="news-item">
+                    <div class="news-content">
+                        <div class="hnw-img">
+                            <a href="@url"><img src="@item.Avatar" alt="news"></a>
+                        </div>
+                        <div class="hnw-desc">
+                            <div class="hnw-title">@item.Title</div>
+                            <div class="hnw-text">
+                                @if (item.Desc.Length > 50)
+                                {
+                                    <p>@item.Desc.Substring(0, 50) [...]</p>
+                                }
+                                else
+                                {
+                                    <p>@item.Desc</p>
+                                }
+                                <a href="@url" class="more">Xem thêm</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        <div class=" more-category">
+            <a href="/tin-tuc.html"><div class="theme-button mcbutton">Xem Thêm</div></a>
+        </div>
+    </div>
+</div>

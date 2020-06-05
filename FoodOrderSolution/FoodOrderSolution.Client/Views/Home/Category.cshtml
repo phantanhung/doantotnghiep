@@ -1,0 +1,26 @@
+﻿@model IEnumerable<FoodOrderSolution.Data.ViewModels.ProdcutCategoryView>
+@using FoodOrderSolution.Helper.Core
+<div class="section-home you-might-like">
+    <div class="heading-section">
+        <div class="sa-title popcat">Danh Mục Thực Đơn</div>
+        <div class="clear"></div>
+    </div>
+    <div class="yml-carousel">
+        @if (Model != null && Model.Count() > 0)
+        {
+            foreach (var item in Model)
+            {
+                var url = $"/danh-muc/{item.Title.ToUrlFormat(true, true)}-{item.ID}.html";
+                <div class="yml-box">
+                    <a href="@url">
+                        <div class="yml-img">
+                            <img src="@item.Avatar" alt="you might like">
+                        </div>
+                        <div class="yml-food-text">@item.Title</div>
+                    </a>
+                </div>
+            }
+        }
+    </div>
+</div>
+

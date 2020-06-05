@@ -1,0 +1,94 @@
+﻿@model FoodOrderSolution.Data.ViewModels.NewsView
+@using FoodOrderSolution.Helper.Core
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+    <!-- Header  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-header">
+        <div class="container-fluid">
+            <button type="button" id="sidebarleftbutton" class="btn">
+                <i class="fas fa-align-left"></i>
+            </button>
+            <div class="logo"><a href="/">PHAN HƯNG</a></div>
+            <button type="button" id="sidebarrightbutton" class="btn">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+    </nav>
+    <!-- .Header  -->
+    <!-- Content Wrap  -->
+    <div class="content-wrap">
+
+
+        <div class="food-page-section">
+            @if (Model != null && Model.ID != 0)
+            {
+                <div class="wrap-food-recipe">
+                    <div class="heading-page">
+                        @Model.Title
+
+                    </div>
+
+                    <div class="section-single-page">
+                        <div class="news-wrap">
+                            <img class="img-news" src="@Model.Avatar" alt="@Model.Title.ToUrlFormat(true,true)">
+                            <p class="text-justify">
+                                @Html.Raw(Model.Content)
+                            </p>
+                        </div>
+
+                        <div class="share-button">
+                            <ul class="post-share">
+                                <li class="text">Share</li>
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a> </li>
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+            }
+
+        </div>
+    </div>
+    <!-- .Content wrap  -->
+    <!-- Footer  -->
+    <div class="footer">
+        <div class="footer-heading">Kết nối với chúng tôi</div>
+        <div class="socmed">
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"> <i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- .Footer  -->
+</div>
+

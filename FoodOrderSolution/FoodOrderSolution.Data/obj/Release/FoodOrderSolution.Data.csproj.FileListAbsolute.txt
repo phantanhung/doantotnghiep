@@ -1,0 +1,5 @@
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Data\bin\Release\FoodOrderSolution.Data.dll
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Data\bin\Release\FoodOrderSolution.Data.pdb
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Data\obj\Release\FoodOrderSolution.Data.csprojAssemblyReference.cache
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Data\obj\Release\FoodOrderSolution.Data.dll
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Data\obj\Release\FoodOrderSolution.Data.pdb

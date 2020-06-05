@@ -1,0 +1,6 @@
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Helper\bin\Debug\FoodOrderSolution.Helper.dll
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Helper\bin\Debug\FoodOrderSolution.Helper.pdb
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Helper\obj\Debug\FoodOrderSolution.Helper.dll
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Helper\obj\Debug\FoodOrderSolution.Helper.pdb
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Helper\obj\Debug\FoodOrderSolution.Helper.csprojAssemblyReference.cache
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Helper\obj\Debug\FoodOrderSolution.Helper.csproj.CoreCompileInputs.cache

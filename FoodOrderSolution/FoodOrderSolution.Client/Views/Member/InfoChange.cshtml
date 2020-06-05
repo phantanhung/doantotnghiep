@@ -1,0 +1,149 @@
+﻿@model FoodOrderSolution.Data.ViewModels.MemberActionView
+@{
+    ViewBag.Title = "InfoChange";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div id="content">
+    <!-- Header  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-header">
+        <div class="container-fluid">
+            <button type="button" id="sidebarleftbutton" class="btn">
+                <i class="fas fa-align-left"></i>
+            </button>
+            <div class="logo"><a href="/">PHAN HƯNG</a></div>
+            <button type="button" id="sidebarrightbutton" class="btn">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+    </nav>
+    <!-- .Header  -->
+    <!-- Content Wrap  -->
+    <div class="content-wrap">
+
+
+        <div class="register-section">
+            @using (Html.BeginForm("InfoChange", "Member", FormMethod.Post, new { @class = "form", @id = "setting" }))
+            {
+                <div class="fb-text-heading">Tài Khoản</div>
+                <div class="fb-text">Cập nhật thông tin cá nhân &amp; Tài khoản</div>
+                @Html.TextBoxFor(model => model.ID, new { @class = "form-control", @placeholder = "demo", @title = "Họ tên", @type = "hide", @style = "display:none" })
+                <div class="stt-form">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label for="first_name">Họ tên</label>
+                            @Html.TextBoxFor(model => model.Name, new { @class = "form-control", @placeholder = "demo", @title = "Họ tên" })
+                            @Html.ValidationMessageFor(model => model.Name)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label for="last_name">Địa chỉ</label>
+                            @Html.TextBoxFor(model => model.Address, new { @class = "form-control", @placeholder = "demo", @title = "Địa chỉ" })
+                            @Html.ValidationMessageFor(model => model.Address)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label for="username">SĐT</label>
+                            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", @placeholder = "demo", @title = "SĐT" })
+                            @Html.ValidationMessageFor(model => model.Phone)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label for="email">Email</label>
+                            @Html.TextBoxFor(model => model.Mail, new { @class = "form-control", @placeholder = "demo", @title = "Email" })
+                            @Html.ValidationMessageFor(model => model.Mail)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label for="new_password">Ngày sinh</label>
+                            <input type="text" name="BirthDay" id="BirthDay" class="form-control datepicker" data-date-format="mm/dd/yyyy" value="@String.Format("{0:MM/dd/yyyy}",Model.BirthDay)">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label for="password2">Giới tính</label>
+                            <select class="form-control" id="Gender" name="Gender">
+                                @if (Model.Gender == 0)
+                                {
+                                    <option value="-1">Không xác định</option>
+                                    <option value="1">Nam</option>
+                                    <option selected value="0">Nữ</option>
+                                }
+                                @if (Model.Gender == 1)
+                                {
+                                    <option value="-1">Không xác định</option>
+                                    <option selected value="1">Nam</option>
+                                    <option value="0">Nữ</option>
+                                }
+                                @if (Model.Gender == -1)
+                                {
+                                    <option selected value="-1">Không xác định</option>
+                                    <option value="1">Nam</option>
+                                    <option value="0">Nữ</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label for="email">Tài khoản</label>
+                            @Html.TextBoxFor(model => model.Account, new { @class = "form-control", @placeholder = "demo", @title = "Tài khoản" })
+                            @Html.ValidationMessageFor(model => model.Account)
+                            @Html.ValidationSummary(false, "ExistsAccountError", new { @class = "label-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label for="email">Mật khẩu</label>
+                            @Html.TextBoxFor(model => model.Password, new { @class = "form-control", @value = "demo", @title = "Mật khẩu", @type = "password", @readonly = "readonly" })
+                            @Html.ValidationMessageFor(model => model.Password)
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-btn">
+                    <div class="wrap-sbtn">
+                        <button class="theme-button" type="submit">Cập nhật</button>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+    <!-- .Content wrap  -->
+    <!-- Footer  -->
+    <div class="footer">
+        <div class="footer-heading">Kết nối với chúng tôi</div>
+        <div class="socmed">
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"> <i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- .Footer  -->
+</div>

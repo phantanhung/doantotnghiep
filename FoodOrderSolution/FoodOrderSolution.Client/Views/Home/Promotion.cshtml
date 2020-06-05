@@ -1,0 +1,26 @@
+﻿@model IEnumerable<FoodOrderSolution.Data.ViewModels.PromotionView>
+@using FoodOrderSolution.Helper.Core
+<div class="section-home home-news">
+    <div class="heading-section">
+        <div class="sa-title popcat">Tin Khuyến Mãi</div>
+        <div class="clear"></div>
+    </div>
+    <div class="promotion-list-rc">
+        @if (Model != null && Model.Count() > 0)
+        {
+            foreach (var item in Model)
+            {
+                var url = $"/khuyen-mai/{item.Title.ToUrlFormat(true, true)}-{item.ID}.html";
+                <div class="lrc-item">
+                    <a href="@url">
+                        <div class="lrc-content">
+                            <div class="lrc-img">
+                                <img src="@item.Avatar" alt="item">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        }
+    </div>
+</div>

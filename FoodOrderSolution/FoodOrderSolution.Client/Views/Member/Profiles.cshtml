@@ -1,0 +1,94 @@
+﻿@model FoodOrderSolution.Data.ViewModels.MemberView
+@{
+    ViewBag.Title = "Profile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+    <!-- Header  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-header">
+        <div class="container-fluid">
+            <button type="button" id="sidebarleftbutton" class="btn">
+                <i class="fas fa-align-left"></i>
+            </button>
+            <div class="logo"><a href="/">PHAN HƯNG</a></div>
+            <button type="button" id="sidebarrightbutton" class="btn">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+    </nav>
+    <!-- .Header  -->
+    <!-- Content Wrap  -->
+    <div class="content-wrap">
+        <div class="section-profile">
+            <div class="banner-bg">
+                <img src="/Content/img/bannerprofile.jpg" alt="banner">
+            </div>
+            @if (Model != null && Model.ID != 0)
+            {
+                <div class="section-home wrap-pro">
+                    <div class="photo-profile">
+                        <img src="/Content/img/profile5.jpg" alt="profile">
+                    </div>
+                    <div class="proname">@Model.Name</div>
+                    <div class="proname-info">@Model.Level</div>
+
+
+                    <div class="pro-des">
+                        <p><i class="fa fa-map-marker"></i>&nbsp;@Model.Address</p>
+                        <p><i class="fa fa-phone"></i>&nbsp;@Model.Phone</p>
+                        <p><i class="fa fa-envelope"></i>&nbsp;@Model.Mail</p>
+                    </div>
+                    <div class="probox">
+                        <div class="bx-col">
+                            <div class="bx-col-in"> Điểm<br><span class="count"> @Model.AccumulatedPoints </span></div>
+                        </div>
+
+                        <div class="bx-col">
+                            <div class="bx-col-in"> Cấp độ<br><span class="count"> @Model.Level </span></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    @Html.Action("ReceiptWidget", "Member")
+
+                    <div class="content-from">
+                        <div class="cf-heading">Danh sách đơn hàng</div>
+                        @Html.Action("OrderWidget","Member")
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+    <!-- .Content wrap  -->
+    <!-- Footer  -->
+    <div class="footer">
+        <div class="footer-heading">Kết nối với chúng tôi</div>
+        <div class="socmed">
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"> <i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- .Footer  -->
+</div>
+

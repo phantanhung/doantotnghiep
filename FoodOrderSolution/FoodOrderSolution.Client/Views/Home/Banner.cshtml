@@ -1,0 +1,13 @@
+﻿@model IEnumerable<FoodOrderSolution.Data.ViewModels.BannerActionView>
+@using FoodOrderSolution.Helper.Core
+<div class="img-hero">
+    @if (Model != null && Model.Count() > 0)
+    {
+        foreach (var item in Model)
+        {
+            <div>
+                <img src="@item.Avatar" alt="@item.Desc.ToUrlFormat(true,true)">
+            </div>
+        }
+    }
+</div>

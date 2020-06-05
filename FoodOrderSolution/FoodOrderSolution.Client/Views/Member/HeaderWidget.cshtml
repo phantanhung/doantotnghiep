@@ -1,0 +1,42 @@
+﻿@model FoodOrderSolution.Data.ViewModels.MemberView
+    <div class="sdprofile">
+        @if (Model != null && Model.ID != 0)
+        {
+            <div class="sdp-left">
+                <img src="/Content/img/profile5.jpg" alt="profile">
+            </div>
+            <div class="sdp-right">
+                <div class="sd-name">@Model.Name</div>
+                <div class="sd-status">@Model.Level</div>
+                <div class="sd-name"><a href="" onclick="logOut()">Đăng xuất</a></div>
+            </div>
+        }
+        else
+        {
+            <div class="sdp-left">
+                <img src="/Content/img/profile5.jpg" alt="profile">
+            </div>
+            <div class="sdp-right">
+                <div class="sd-name"><a href="/dang-nhap.html">Đăng nhập</a></div>
+                <div class="sd-name"><a href="/dang-ky.html">Đăng ký</a></div>
+            </div>
+        }
+    </div>
+    <script>
+    function logOut() {
+        $.ajax({
+            url: "/Member/Logout",
+            type: "POST",
+            traditional: true,
+            datatype: "json",
+            contentType: 'application/json; charset=utf-8',
+            success: function (result) {
+                //alert(result);
+                location.href = "/";
+            },
+            error: function () {
+                return false;
+            }
+        });
+    }
+    </script>

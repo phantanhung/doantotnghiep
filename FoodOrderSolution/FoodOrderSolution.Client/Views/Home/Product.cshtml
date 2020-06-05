@@ -1,0 +1,58 @@
+﻿@model IEnumerable<FoodOrderSolution.Data.ViewModels.ProductViewList>
+@using FoodOrderSolution.Helper.Core
+<div class="section-home s-category">
+    <div class="heading-section">
+        <div class="sa-title popcat">Thực Đơn Nổi Bật</div>
+        <div class="clear"></div>
+    </div>
+    <div class="list-section">
+        <div class="wrap-list-rc">
+            @if (Model != null && Model.Count() > 0)
+            {
+                foreach (var item in Model)
+                {
+                    var url = $"/san-pham/{item.Title.ToUrlFormat(true, true)}-{item.ID}.html";
+                    <div class="lrc-item">
+                        <a href="@url">
+                            <div class="lrc-content">
+                                <div class="lrc-img">
+                                    <img src="@item.Avatar" alt="item">
+                                </div>
+                                <div class="lrc-desc">
+                                    <div class="lrc-title">@item.Title</div>
+                                    <div class="lrc-button">
+                                        <div class="lrcb-left">
+
+                                            <span class="lhc hours"><i class="fas fa-clock"></i>&nbsp;@item.IntendTime m</span>
+                                            <span class="lhc comment"><i class="fas fa-star"></i>&nbsp;@item.Rate</span>
+                                            <span class="lhc price-span">@String.Format("{0:0,00}", item.Price)đ</span>
+                                        </div>
+                                        <div class="lrcb-right">
+
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="lrc-text">
+                                        @if (item.Desc != null)
+                                        {
+                                            if (item.Desc.Length > 50)
+                                            {
+                                                <p>@item.Desc.Substring(0, 50) [...]</p>
+                                            }
+                                            else
+                                            {
+                                                <p> @item.Desc</p>
+                                            }
+                                        }
+                                    </div>
+
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            }
+
+        </div>
+    </div>
+</div>

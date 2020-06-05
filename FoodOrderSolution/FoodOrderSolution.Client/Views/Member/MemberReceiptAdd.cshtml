@@ -1,0 +1,95 @@
+﻿@model FoodOrderSolution.Data.ViewModels.MemberReceiptInfoView
+@{
+    ViewBag.Title = "MemberReceiptAdd";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content">
+    <!-- Header  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-header">
+        <div class="container-fluid">
+            <button type="button" id="sidebarleftbutton" class="btn">
+                <i class="fas fa-align-left"></i>
+            </button>
+            <div class="logo"><a href="/">PHAN HƯNG</a></div>
+            <button type="button" id="sidebarrightbutton" class="btn">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+    </nav>
+    <!-- .Header  -->
+    <!-- Content Wrap  -->
+    <div class="content-wrap">
+        <div class="register-section">
+            @using (Html.BeginForm("MemberReceiptAdd", "Member", FormMethod.Post, new { @class = "form", @id = "setting" }))
+            {
+                <div class="fb-text-heading">Địa chỉ nhận hàng</div>
+                <div class="fb-text">Cập nhật thông tin địa chỉ nhận hàng</div>
+                @Html.TextBoxFor(model => model.ID, new { @class = "form-control", @placeholder = "demo", @title = "", @type = "hide", @style = "display:none" })
+                @Html.TextBoxFor(model => model.Member, new { @class = "form-control", @placeholder = "demo", @title = "", @type = "hide", @style = "display:none" })
+                <div class="stt-form">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label for="first_name">Họ tên</label>
+                            @Html.TextBoxFor(model => model.FullName, new { @class = "form-control", @placeholder = "demo", @title = "Họ tên" })
+                            @Html.ValidationMessageFor(model => model.FullName)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label for="last_name">Địa chỉ</label>
+                            @Html.TextBoxFor(model => model.Address, new { @class = "form-control", @placeholder = "demo", @title = "Địa chỉ" })
+                            @Html.ValidationMessageFor(model => model.Address)
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label for="username">SĐT</label>
+                            @Html.TextBoxFor(model => model.Phone, new { @class = "form-control", @placeholder = "demo", @title = "SĐT" })
+                            @Html.ValidationMessageFor(model => model.Phone)
+                        </div>
+                    </div>
+                </div>
+                <div class="submit-btn">
+                    <div class="wrap-sbtn">
+                        <button class="theme-button" type="submit">Cập nhật</button>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+    <!-- .Content wrap  -->
+    <!-- Footer  -->
+    <div class="footer">
+        <div class="footer-heading">Kết nối với chúng tôi</div>
+        <div class="socmed">
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"> <i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- .Footer  -->
+</div>
+

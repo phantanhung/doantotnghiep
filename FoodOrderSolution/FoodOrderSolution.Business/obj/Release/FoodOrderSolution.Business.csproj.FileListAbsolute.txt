@@ -1,0 +1,15 @@
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Business\bin\Release\FoodOrderSolution.Business.dll
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Business\bin\Release\FoodOrderSolution.Business.pdb
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Business\bin\Release\FoodOrderSolution.Data.dll
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Business\bin\Release\FoodOrderSolution.Helper.dll
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Business\bin\Release\FoodOrderSolution.Services.dll
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Business\bin\Release\EntityFramework.dll
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Business\bin\Release\FoodOrderSolution.Data.pdb
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Business\bin\Release\FoodOrderSolution.Helper.pdb
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Business\bin\Release\FoodOrderSolution.Services.pdb
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Business\bin\Release\FoodOrderSolution.Services.dll.config
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Business\bin\Release\EntityFramework.xml
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Business\obj\Release\FoodOrderSolution.Business.csprojAssemblyReference.cache
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Business\obj\Release\FoodOrderSolution.Business.csproj.CopyComplete
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Business\obj\Release\FoodOrderSolution.Business.dll
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Business\obj\Release\FoodOrderSolution.Business.pdb

@@ -1,0 +1,219 @@
+﻿@model FoodOrderSolution.Data.ViewModels.ProductViewList
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+</style>
+<div id="content">
+    <!-- Header  -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-header">
+        <div class="container-fluid">
+            <button type="button" id="sidebarleftbutton" class="btn">
+                <i class="fas fa-align-left"></i>
+            </button>
+            <div class="logo"><a href="/">PHAN HƯNG</a></div>
+            <button type="button" id="sidebarrightbutton" class="btn">
+                <i class="fas fa-shopping-cart"></i>
+            </button>
+        </div>
+    </nav>
+    <!-- .Header  -->
+    <!-- Content Wrap  -->
+    <div class="content-wrap">
+
+
+        <div class="food-page-section">
+            <div class="wrap-food-recipe">
+                @if (Model != null && Model.ID != 0)
+                {
+                    <div class="heading-page">
+                        @Model.Title
+                    </div>
+                    <div class="image-favourite">
+                        <div class="pg-product-image">
+                            <!-- image -->
+                            <div class="col-lg-6 col-md-6 col-sm-12" style="float:left">
+                                <div class="pgp-wrap-img">
+                                    <div class="pgp-wrap-img-in">
+                                        <div class="pgp-img" style="padding: 15px;text-align:center">
+                                            <img src="@Model.Avatar" alt="1st image">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12" style="float:left;padding: 15px;">
+                                <h3>@Model.Title</h3>
+                                <p>@Model.Desc</p>
+                                <div>
+                                    <p class="btn btn-primary" onclick="btnMinus()" style="width: 35px;height: 35px;line-height: 30px;padding: 0;margin: 0;cursor:pointer">-</p>
+                                    <input type="number" id="txtQty" class="btn btn-primary" style="width: 50px;height: 35px;line-height: 30px;padding: 0;margin: 0;background: none;color: black;" value="0" min="0" max="10" />
+                                    <p class="btn btn-primary" onclick="btnPlus()" style="width: 35px;height: 35px;line-height: 30px;padding: 0;margin: 0;cursor:pointer">+</p>
+                                </div>
+                                <p href="" class="btn btn-primary" onclick="addShopingCart(@Model.ID,'@Model.Title',@Model.Price,'@Model.Avatar',@Model.VendorID)" style="width: auto;height: 35px;line-height: 30px;padding: 0;margin: 0;cursor:pointer;margin: 10px 0;padding: 0 5px;"><i class="fa fa-plus"></i>&nbsp;Gọi món</p>
+                            </div>
+                            <!-- end image -->
+                        </div>
+                    </div>
+                    <div class="recipe-description" style="clear:both">
+
+                        <div class="rd-tab">
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="tab" href="#tab1">Mô tả</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#tab2">Đánh giá</a>
+                                </li>
+
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div id="tab1" class=" tab-pane active">
+                                    <div class="tab-detail-rcp">
+                                        @Html.Raw(Model.Desc)
+
+                                    </div>
+                                </div>
+                                <div id="tab2" class=" tab-pane fade">
+                                    <div class="tab-comment">
+                                        <div class="add-new-comment">
+
+                                            <textarea class="input your-msg" placeholder="Type your message here..."></textarea>
+                                            <button class="theme-button send-msg">Send message</button>
+                                        </div>
+                                        <div class="comment-list">
+                                            <div class="section-comment">
+                                                <div class="comment-view-body">
+                                                    <div class="cm-row">
+                                                        <div class="cm-img">
+                                                            <img src="/Content/img/profile5.jpg" alt="profile">
+                                                        </div>
+                                                        <div class="cm-comment">
+                                                            <div class="cmc-heading">
+                                                                <a class="float-left cm-name" href="#"><strong>Laraa</strong>&nbsp;(3<img style="width: 14px;margin-top: -4px;" src="~/Content/img/star.png" />)</a>
+                                                                <p class="float-right cm-hour">15 Minutes Ago</p>
+                                                                <div class="clear"></div>
+                                                            </div>
+                                                            <div class="cm-content">
+                                                                Lorem Ipsum is simply dummy text of the pr make  but also the leap into electronic typesetting.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="section-comment">
+                                                        <div class="comment-view-body">
+                                                            <div class="cm-row">
+                                                                <div class="cm-img">
+                                                                    <img src="/Content/img/profile5.jpg" alt="profile">
+                                                                </div>
+                                                                <div class="cm-comment">
+                                                                    <div class="cmc-heading">
+                                                                        <a class="float-left cm-name" href="#"><strong>Laraa</strong></a>
+                                                                        <p class="float-right cm-hour">15 Minutes Ago</p>
+                                                                        <div class="clear"></div>
+                                                                    </div>
+                                                                    <div class="cm-content">
+                                                                        Lorem Ipsum is simply dummy text of the pr make  but also the leap into electronic typesetting.
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="section-comment">
+                                                <div class="comment-view-body">
+                                                    <div class="cm-row">
+                                                        <div class="cm-img">
+                                                            <img src="/Content/img/profile4.jpg" alt="profile">
+                                                        </div>
+                                                        <div class="cm-comment">
+                                                            <div class="cmc-heading">
+                                                                <a class="float-left cm-name" href="#"><strong>Hei Tayo</strong>&nbsp;(5<img style="width: 14px;margin-top: -4px;" src="~/Content/img/star.png" />)</a>
+                                                                <p class="float-right cm-hour">21 Minutes Ago</p>
+                                                                <div class="clear"></div>
+                                                            </div>
+                                                            <div class="cm-content">
+                                                                but also the leap into electronic typesetting.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="section-comment">
+                                                <div class="comment-view-body">
+                                                    <div class="cm-row">
+                                                        <div class="cm-img">
+                                                            <img src="/Content/img/profile2.jpg" alt="profile">
+                                                        </div>
+                                                        <div class="cm-comment">
+                                                            <div class="cmc-heading">
+                                                                <a class="float-left cm-name" href="#"><strong>Toruk Makto</strong>&nbsp;(3<img style="width: 14px;margin-top: -4px;" src="~/Content/img/star.png" />)</a>
+                                                                <p class="float-right cm-hour">2 Hours Ago</p>
+                                                                <div class="clear"></div>
+                                                            </div>
+                                                            <div class="cm-content">
+                                                                but also the leap into electronic typesetting.
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <!-- .Content wrap  -->
+    <!-- Footer  -->
+    <div class="footer">
+        <div class="footer-heading">Kết nối với chúng tôi</div>
+        <div class="socmed">
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"> <i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+
+            <div class="socmed-line">
+                <div class="socmed-item">
+                    <a href="#" class="si-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- .Footer  -->
+</div>
+
