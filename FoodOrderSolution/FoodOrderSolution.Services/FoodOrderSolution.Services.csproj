@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{973575F0-954D-426A-8C26-45C73190EC58}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FoodOrderSolution.Services</RootNamespace>
+    <AssemblyName>FoodOrderSolution.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EntitiesDbContext.cs" />
+    <Compile Include="Infrastructure\DbFactory.cs" />
+    <Compile Include="Infrastructure\Disposable.cs" />
+    <Compile Include="Infrastructure\IDbFactory.cs" />
+    <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\RepositoryBase.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Migrations\202004231546578_start.cs" />
+    <Compile Include="Migrations\202004231546578_start.designer.cs">
+      <DependentUpon>202004231546578_start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004241617386_remove-tag.cs" />
+    <Compile Include="Migrations\202004241617386_remove-tag.designer.cs">
+      <DependentUpon>202004241617386_remove-tag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005021651559_add-reply-feedback.cs" />
+    <Compile Include="Migrations\202005021651559_add-reply-feedback.designer.cs">
+      <DependentUpon>202005021651559_add-reply-feedback.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005030408182_update-voucher-order.cs" />
+    <Compile Include="Migrations\202005030408182_update-voucher-order.designer.cs">
+      <DependentUpon>202005030408182_update-voucher-order.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005030439397_update-voucher-promotion.cs" />
+    <Compile Include="Migrations\202005030439397_update-voucher-promotion.designer.cs">
+      <DependentUpon>202005030439397_update-voucher-promotion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005041641205_update.cs" />
+    <Compile Include="Migrations\202005041641205_update.designer.cs">
+      <DependentUpon>202005041641205_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005050404075_update-voucher-filed.cs" />
+    <Compile Include="Migrations\202005050404075_update-voucher-filed.designer.cs">
+      <DependentUpon>202005050404075_update-voucher-filed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005071007109_update-promotion-code.cs" />
+    <Compile Include="Migrations\202005071007109_update-promotion-code.designer.cs">
+      <DependentUpon>202005071007109_update-promotion-code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005121725042_update-staff-position.cs" />
+    <Compile Include="Migrations\202005121725042_update-staff-position.designer.cs">
+      <DependentUpon>202005121725042_update-staff-position.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005131027131_update-member-status.cs" />
+    <Compile Include="Migrations\202005131027131_update-member-status.designer.cs">
+      <DependentUpon>202005131027131_update-member-status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005140328349_update-member-point.cs" />
+    <Compile Include="Migrations\202005140328349_update-member-point.designer.cs">
+      <DependentUpon>202005140328349_update-member-point.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005151649267_add-banner-table.cs" />
+    <Compile Include="Migrations\202005151649267_add-banner-table.designer.cs">
+      <DependentUpon>202005151649267_add-banner-table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202005211636054_update-voucher-receiver.cs" />
+    <Compile Include="Migrations\202005211636054_update-voucher-receiver.designer.cs">
+      <DependentUpon>202005211636054_update-voucher-receiver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006010707052_add-booking-log.cs" />
+    <Compile Include="Migrations\202006010707052_add-booking-log.designer.cs">
+      <DependentUpon>202006010707052_add-booking-log.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202006011006412_update-order-receipt.cs" />
+    <Compile Include="Migrations\202006011006412_update-order-receipt.designer.cs">
+      <DependentUpon>202006011006412_update-order-receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\BannerRepository.cs" />
+    <Compile Include="Repositories\ProductFeedbackRepository.cs" />
+    <Compile Include="Repositories\ProductCategoryRepository.cs" />
+    <Compile Include="Repositories\ProductRepository.cs" />
+    <Compile Include="Repositories\VendorReplyRepository.cs" />
+    <Compile Include="Repositories\VoucherRepository.cs" />
+    <Compile Include="Repositories\VendorLevelRepository.cs" />
+    <Compile Include="Repositories\VendorRepository.cs" />
+    <Compile Include="Repositories\StaffRepository.cs" />
+    <Compile Include="Repositories\PromotionRepository.cs" />
+    <Compile Include="Repositories\PositionRepository.cs" />
+    <Compile Include="Repositories\OrderDetailRepository.cs" />
+    <Compile Include="Repositories\OrderRepository.cs" />
+    <Compile Include="Repositories\NewsRepository.cs" />
+    <Compile Include="Repositories\MemberReceiptInfoRepository.cs" />
+    <Compile Include="Repositories\MemberLevelRepository.cs" />
+    <Compile Include="Repositories\MemberRepository.cs" />
+    <Compile Include="Repositories\HistoryVoucherRepository.cs" />
+    <Compile Include="Repositories\FeedbackRepository.cs" />
+    <Compile Include="Repositories\DepartmentRepository.cs" />
+    <Compile Include="Repositories\ContractRepository.cs" />
+    <Compile Include="Repositories\HistoryPointRepository.cs" />
+    <Compile Include="Repositories\AssignPositionRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FoodOrderSolution.Data\FoodOrderSolution.Data.csproj">
+      <Project>{B205088B-84EE-4384-A455-4EF3E988A607}</Project>
+      <Name>FoodOrderSolution.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202004231546578_start.resx">
+      <DependentUpon>202004231546578_start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004241617386_remove-tag.resx">
+      <DependentUpon>202004241617386_remove-tag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005021651559_add-reply-feedback.resx">
+      <DependentUpon>202005021651559_add-reply-feedback.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005030408182_update-voucher-order.resx">
+      <DependentUpon>202005030408182_update-voucher-order.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005030439397_update-voucher-promotion.resx">
+      <DependentUpon>202005030439397_update-voucher-promotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005041641205_update.resx">
+      <DependentUpon>202005041641205_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005050404075_update-voucher-filed.resx">
+      <DependentUpon>202005050404075_update-voucher-filed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005071007109_update-promotion-code.resx">
+      <DependentUpon>202005071007109_update-promotion-code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005121725042_update-staff-position.resx">
+      <DependentUpon>202005121725042_update-staff-position.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005131027131_update-member-status.resx">
+      <DependentUpon>202005131027131_update-member-status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005140328349_update-member-point.resx">
+      <DependentUpon>202005140328349_update-member-point.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005151649267_add-banner-table.resx">
+      <DependentUpon>202005151649267_add-banner-table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202005211636054_update-voucher-receiver.resx">
+      <DependentUpon>202005211636054_update-voucher-receiver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006010707052_add-booking-log.resx">
+      <DependentUpon>202006010707052_add-booking-log.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202006011006412_update-order-receipt.resx">
+      <DependentUpon>202006011006412_update-order-receipt.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.0\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.0\build\EntityFramework.targets')" />
+</Project>
