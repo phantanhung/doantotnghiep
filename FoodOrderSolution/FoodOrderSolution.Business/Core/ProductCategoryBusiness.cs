@@ -40,7 +40,7 @@ namespace FoodOrderSolution.Business.Core
             try
             {
                 ProductCategory category = new ProductCategory();
-                category.Avatar = "http://localhost:8810/" + entity.Avatar;
+                category.Avatar = "http://localhost:44351/" + entity.Avatar;
                 category.CreateBy = entity.CreateBy;
                 category.CreateDate = DateTime.Now;
                 category.Desc = entity.Desc;

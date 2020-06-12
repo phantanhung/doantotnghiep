@@ -594,7 +594,7 @@ namespace FoodOrderSolution.Client.Controllers
             conn.AddDigitalOrderField("vpc_OrderInfo", barCode);
             conn.AddDigitalOrderField("vpc_Amount", amount);
             conn.AddDigitalOrderField("vpc_Currency", "VND");
-            conn.AddDigitalOrderField("vpc_ReturnURL", "http://localhost:8812/xac-nhan-thanh-toan-noi-dia.html");
+            conn.AddDigitalOrderField("vpc_ReturnURL", "http://localhost:44345/xac-nhan-thanh-toan-noi-dia.html");
             // Thong tin them ve khach hang. De trong neu khong co thong tin
             conn.AddDigitalOrderField("vpc_SHIP_Street01", "");
             conn.AddDigitalOrderField("vpc_SHIP_Provice", "");
@@ -629,7 +629,7 @@ namespace FoodOrderSolution.Client.Controllers
             conn.AddDigitalOrderField("vpc_MerchTxnRef", barCode.Split('-')[0]);
             conn.AddDigitalOrderField("vpc_OrderInfo", barCode);
             conn.AddDigitalOrderField("vpc_Amount", amount);
-            conn.AddDigitalOrderField("vpc_ReturnURL", "http://localhost:8812/xac-nhan-thanh-toan-quoc-te.html");
+            conn.AddDigitalOrderField("vpc_ReturnURL", "http://localhost:44345/xac-nhan-thanh-toan-quoc-te.html");
             // Thong tin them ve khach hang. De trong neu khong co thong tin
             conn.AddDigitalOrderField("vpc_SHIP_Street01", " ");
             conn.AddDigitalOrderField("vpc_SHIP_Provice", " ");
