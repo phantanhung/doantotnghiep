@@ -344,6 +344,8 @@
     <Content Include="Views\Product\Confirm_Global.cshtml" />
     <Content Include="Views\Product\NoPay.cshtml" />
     <Content Include="Views\Member\OrderWidget.cshtml" />
+    <Content Include="Views\Product\WidgetSearch.cshtml" />
+    <Content Include="Views\Product\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FoodOrderSolution.Business\FoodOrderSolution.Business.csproj">

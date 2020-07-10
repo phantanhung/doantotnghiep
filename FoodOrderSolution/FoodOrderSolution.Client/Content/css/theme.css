@@ -743,7 +743,7 @@ a[data-toggle="collapse"] {
     position: relative;
 }
 
-    .search-wrapper input#search {
+    .search-wrapper input#ip_search {
         display: block;
         font-weight: 300;
         width: 100%;
@@ -778,7 +778,78 @@ a[data-toggle="collapse"] {
         right: 18px;
         font-size: 18px;
     }
+#sidebarsearch {
+    width: 250px;
+    position: fixed;
+    top: 0;
+    right: 0px;
+    height: 100vh;
+    z-index: 999;
+    background-color: #333333;
+    color: #fff;
+    transition: all 0.3s;
+    overflow: auto;
+    right: -250px;
+}
 
+    #sidebarsearch a,
+    #sidebarsearch a:hover {
+        color: #ffffff;
+    }
+
+    #sidebarsearch ul .svg-inline--fa {
+        color: #ff5722;
+    }
+
+    #sidebarsearch .right-menu {
+        padding: 10px 0px;
+        border-top: 0px solid rgba(0, 0, 0, 0.3);
+        margin-top: 0px;
+    }
+
+        #sidebarsearch .right-menu .right-menu-item {
+            padding: 0px 0px;
+        }
+
+    #sidebarsearch ul li a {
+        padding: 5px 20px;
+        font-size: 1.1em;
+        display: block;
+    }
+
+    #sidebarsearch ul li .fas,
+    #sidebarsearch ul li .svg-inline--fa {
+        font-size: 14px;
+        margin-right: 5px;
+        color: #ff5722;
+    }
+
+    #sidebarsearch .count {
+        background-color: rgba(0, 0, 0, 0.07);
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        padding: 0px 3px;
+        font-size: 12px;
+        display: inline-block;
+        text-align: center;
+        margin-left: 3px;
+    }
+
+    #sidebarsearch #dismiss {
+        top: 15px;
+        left: 15px;
+    }
+
+    #sidebarsearch .sidebar-header {
+        padding: 20px;
+        text-align: right;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+    }
+
+    #sidebarsearch.active {
+        right: 0;
+    }
 /* ---------------------------------------------------
 5. HOMEPAGE
 ----------------------------------------------------- */

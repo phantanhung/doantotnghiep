@@ -29,7 +29,7 @@ NOTE: This is the custom js file for the template
       $('body').removeClass('noscroll');
   });
 
-  $('#sidebarleftbutton,#sidebarrightbutton').on('click', function () { 
+  $('#sidebarleftbutton,#sidebarrightbutton,#sidebarsearchbutton').on('click', function () { 
       $('.overlay').addClass('active');
       $('body').addClass('noscroll');
   });
@@ -42,6 +42,9 @@ NOTE: This is the custom js file for the template
       $('#sidebarright').addClass('active'); 
   });
 
+    $('#sidebarsearchbutton').on('click', function () {
+        $('#sidebarsearch').addClass('active');
+    });
 
   /*=================== HOMEPAGE - CAROUSEL SLIDER  ===================*/
   $('.img-hero').slick({

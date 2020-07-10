@@ -261,6 +261,24 @@ namespace FoodOrderSolution.Client.Controllers
                 return PartialView();
             }
         }
+        public ActionResult WidgetSearch()
+        {
+            return PartialView();
+        }
+        public ActionResult Search(string key)
+        {
+            try
+            {
+                var result = _productBusiness.GetSearch(key);
+
+                return View(result);
+            }
+            catch (Exception)
+            {
+
+                return View();
+            }
+        }
         public JsonResult UpdateCart(int vid, long id, int action)
         {
             try

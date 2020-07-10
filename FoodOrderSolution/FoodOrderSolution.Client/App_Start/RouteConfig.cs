@@ -48,6 +48,11 @@ namespace FoodOrderSolution.Client
                 defaults: new { controller = "Product", action = "Detail", id = UrlParameter.Optional }
             );
             routes.MapRoute(
+                name: "ProductSearch",
+                url: "tim-kiem.html",
+                defaults: new { controller = "Product", action = "Search", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
                 name: "NewsList",
                 url: "tin-tuc.html",
                 defaults: new { controller = "News", action = "List", id = UrlParameter.Optional }

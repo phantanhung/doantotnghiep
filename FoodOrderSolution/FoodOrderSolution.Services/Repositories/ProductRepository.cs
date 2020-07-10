@@ -1,5 +1,6 @@
 ﻿using FoodOrderSolution.Data.Models;
 using FoodOrderSolution.Data.ViewModels;
+using FoodOrderSolution.Helper.Core;
 using FoodOrderSolution.Services.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ namespace FoodOrderSolution.Services.Repositories
     {
         IEnumerable<ProductViewList> GetAlls(int id);
         IEnumerable<ProductViewList> GetAlls();
+        IEnumerable<ProductViewList> GetSearch(string key);
         IEnumerable<ProductViewList> GetByCat(int id);
         ProductViewList GetDetail(long id);
         bool Add(ProductAddView model);
@@ -300,6 +302,55 @@ namespace FoodOrderSolution.Services.Repositories
                     return null;
             }
             catch (Exception)
+            {
+
+                return null;
+            }
+        }
+
+        public IEnumerable<ProductViewList> GetSearch(string key)
+        {
+            try
+            {
+                List<ProductViewList> viewLists = new List<ProductViewList>();
+                var _lst = from p in DbContext.Products
+                           from c in DbContext.ProductCategorys
+                           from v in DbContext.Vendors
+                           where p.Vendor == v.ID
+                           && p.Category == c.ID
+                           && p.Status == true
+                           select new
+                           {
+                               ID = p.ID,
+                               Title = p.Title,
+                               Desc = p.Desc,
+                               Avatar = p.Avatar,
+                               Category = c.Title,
+                               Price = p.Price,
+                               Vendor = v.Name
+                           };
+
+                var _temp = _lst.ToList();
+                key = key.ToNoSings(true).ToLowerCase();
+
+                if (_lst != null && _lst.Count() > 0 && _temp.Where(x => x.Title.ToNoSings(true).ToLowerCase().Contains(key) || x.Category.ToNoSings(true).ToLowerCase().Contains(key)|| x.Vendor.ToNoSings(true).ToLowerCase().Contains(key)).Count() > 0)
+                {
+                    foreach (var item in _temp.Where(x => x.Title.ToNoSings(true).ToLowerCase().Contains(key) || x.Category.ToNoSings(true).ToLowerCase().Contains(key) || x.Vendor.ToNoSings(true).ToLowerCase().Contains(key)))
+                    {
+                        ProductViewList viewList = new ProductViewList();
+                        viewList.Avatar = item.Avatar;
+                        viewList.Category = item.Category;
+                        viewList.Desc = item.Desc;
+                        viewList.ID = item.ID;
+                        viewList.Price = item.Price;
+                        viewList.Title = item.Title;
+                        viewList.Vendor = item.Vendor;
+                        viewLists.Add(viewList);
+                    }
+                }
+                return viewLists;
+            }
+            catch (System.Exception)
             {
 
                 return null;

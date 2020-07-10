@@ -43,3 +43,5 @@ D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Services\obj\D
 D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Services\obj\Debug\FoodOrderSolution.Services.csproj.CoreCompileInputs.cache
 D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Services\obj\Debug\FoodOrderSolution.Services.Migrations.addbookinglog.resources
 D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Services\obj\Debug\FoodOrderSolution.Services.Migrations.updateorderreceipt.resources
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Services\bin\Debug\FoodOrderSolution.Helper.dll
+D:\JOB\WEB\DOANHUNG.DHTDM\GIT\FoodOrderSolution\FoodOrderSolution.Services\bin\Debug\FoodOrderSolution.Helper.pdb

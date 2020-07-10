@@ -68,10 +68,21 @@
                 <h3>Giỏ hàng</h3>
             </div>
             <div class="search-form">
-                @Html.Action("WidgetCart","Product")
+                @Html.Action("WidgetCart", "Product")
             </div>
         </nav>
         <!-- .Sidebar right-->
+        <nav id="sidebarsearch" class="sidenav">
+            <div id="dismiss">
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="sidebar-header">
+                <h3>Tìm kiếm</h3>
+            </div>
+            <div class="search-form">
+                @Html.Action("WidgetSearch", "Product")
+            </div>
+        </nav>
         <!-- Page content  -->
 
         @RenderBody()
@@ -89,6 +100,25 @@
             autoclose: true,
             todayHighlight: true,
         });
+    </script>
+    <script>
+        $("#ip_search").keypress(function (event) {
+            var key = (event.keyCode ? event.keyCode : event.which);
+            if (key == '13') {
+                Search();
+            }
+        });
+        $("#btn_search").click(function () {
+            Search();
+        });
+        function Search() {
+            var keyword = "";
+            keyword = $("#ip_search").val();
+            if (keyword == '' || keyword == null || keyword == undefined) {
+                return;
+            }
+            location.href = "/tim-kiem.html?key=" + keyword;
+        }
     </script>
 </body>
 </html>

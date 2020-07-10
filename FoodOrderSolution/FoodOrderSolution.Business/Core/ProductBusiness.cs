@@ -22,6 +22,7 @@ namespace FoodOrderSolution.Business.Core
         ProductViewList GetDetail(long id);
         bool Add(ProductAddView entity);
         bool Edit(ProductEditView entity);
+        IEnumerable<ProductViewList> GetSearch(string key);
         Product Update(Product entity, List<Expression<Func<Product, object>>> update = null, List<Expression<Func<Product, object>>> exclude = null);
         bool Delete(long id);
         Product Delete(Product entity);
@@ -100,6 +101,11 @@ namespace FoodOrderSolution.Business.Core
         public ProductViewList GetDetail(long id)
         {
             return _product.GetDetail(id);
+        }
+
+        public IEnumerable<ProductViewList> GetSearch(string key)
+        {
+            return _product.GetSearch(key);
         }
     }
 }
